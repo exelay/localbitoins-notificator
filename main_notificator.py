@@ -27,7 +27,7 @@ class Notificator:
     async def run(self):
         while True:
             await self.notify()
-            sleep(60)
+            sleep(10)
 
 
 if __name__ == '__main__':
