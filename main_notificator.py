@@ -1,4 +1,5 @@
 from time import sleep
+from loguru import logger
 from asyncio import get_event_loop
 
 from core.loader import lb_client
@@ -18,11 +19,14 @@ class Notificator:
     async def notify(self):
         notifications = lb_client.send_request('/api/notifications/')
         new_notifications = [notification for notification in notifications if not notification['read']]
+        logger.debug(f'New notifications list: {new_notifications}')
 
         if len(notifications) > self.notifications_count:
             for notification in new_notifications:
+                logger.debug(f'Sends notification: {notification}')
                 await self.send_notification(notification)
             self.notifications_count = len(notifications)
+        logger.debug(f'Notifications count is: {self.notifications_count}')
 
     async def run(self):
         while True:
