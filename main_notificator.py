@@ -18,6 +18,7 @@ class Notificator:
 
     async def notify(self):
         notifications = lb_client.send_request('/api/notifications/')
+        logger.debug(f'New notifications list: {notifications}')
         new_notifications = [notification for notification in notifications if not notification['read']]
         logger.debug(f'New notifications list: {new_notifications}')
 
