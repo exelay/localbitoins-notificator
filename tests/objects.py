@@ -32,13 +32,11 @@ notifications = [
     "contact_id": 76466333
   }
 ]
-new_notifications = [
-  {
-    "read": False,
-    "created_at": "2021-11-30T17:13:22+00:00",
-    "msg": "Сделка #76466356 новое сообщение от IDA_OROVA",
-    "url": "/request/online_sell_seller/76466356",
-    "id": "b989906eb59e",
-    "contact_id": 76466356
-  }
-]
+new_notification = {
+  "read": False,
+  "created_at": "2021-11-30T17:13:22+00:00",
+  "msg": "Сделка #76466356 новое сообщение от IDA_OROVA",
+  "url": "/request/online_sell_seller/76466356",
+  "id": "b989906eb59e",
+  "contact_id": 76466356
+}
