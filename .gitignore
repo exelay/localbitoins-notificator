@@ -8,3 +8,6 @@ __pycache__
 # Enviroment
 .env
 venv
+
+# Tests
+.coverage
